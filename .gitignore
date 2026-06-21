@@ -1,0 +1,26 @@
+# Mo.dark – BlackBox .gitignore
+# هذه الملفات لن تُرفع إلى GitHub
+
+# قاعدة البيانات (تحتوي على بيانات حساسة)
+database.sqlite
+database.sqlite-journal
+
+# ملفات البيئة (تحتوي على مفاتيح سرية)
+.env
+
+# مجلدات التبعيات
+node_modules/
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+*.log
+
+# نسخ احتياطية
+*.bak
+*.backup
+/backup/
+
+# ملفات مؤقتة
+*.tmp
+*.temp
