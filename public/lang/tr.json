@@ -1,0 +1,23 @@
+{
+  "title": "Kara Kutu",
+  "balance": "Bakiye",
+  "login": "Giriş Yap",
+  "email": "E-posta",
+  "wallet": "Binance Cüzdan Adresi (USDT)",
+  "loginBtn": "Giriş / Kayıt",
+  "level": "Risk Seviyesi Seç",
+  "low": "Düşük",
+  "medium": "Orta",
+  "high": "Yüksek",
+  "bet": "Bahis",
+  "play": "Kutu Seç",
+  "deposit": "Yatır",
+  "withdraw": "Çek",
+  "leaders": "Bugünün Liderleri",
+  "recent": "Son İşlemler",
+  "logout": "Çıkış Yap",
+  "win": "Kazandın!",
+  "lose": "Kaybettin!",
+  "multiplier": "Çarpan",
+  "profit": "Kâr"
+}
