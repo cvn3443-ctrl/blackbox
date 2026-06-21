@@ -1,0 +1,23 @@
+{
+  "title": "Boîte Noire",
+  "balance": "Solde",
+  "login": "Connexion",
+  "email": "E-mail",
+  "wallet": "Adresse du portefeuille Binance (USDT)",
+  "loginBtn": "Connexion / Inscription",
+  "level": "Choisissez le niveau de risque",
+  "low": "Bas",
+  "medium": "Moyen",
+  "high": "Élevé",
+  "bet": "Mise",
+  "play": "Choisissez une boîte",
+  "deposit": "Dépôt",
+  "withdraw": "Retrait",
+  "leaders": "Les leaders du jour",
+  "recent": "Transactions récentes",
+  "logout": "Déconnexion",
+  "win": "Vous gagnez!",
+  "lose": "Vous perdez!",
+  "multiplier": "Multiplicateur",
+  "profit": "Bénéfice"
+}
