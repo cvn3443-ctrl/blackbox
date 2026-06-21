@@ -1,0 +1,23 @@
+{
+  "title": "Black Box",
+  "balance": "Balance",
+  "login": "Login",
+  "email": "Email",
+  "wallet": "Binance Wallet Address (USDT)",
+  "loginBtn": "Login / Register",
+  "level": "Select Risk Level",
+  "low": "Low",
+  "medium": "Medium",
+  "high": "High",
+  "bet": "Bet",
+  "play": "Pick a Box",
+  "deposit": "Deposit",
+  "withdraw": "Withdraw",
+  "leaders": "Today's Leaders",
+  "recent": "Recent Transactions",
+  "logout": "Logout",
+  "win": "You Win!",
+  "lose": "You Lose!",
+  "multiplier": "Multiplier",
+  "profit": "Profit"
+}
