@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BlackBox – الصندوق الأسود</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>📦 BlackBox</h1>
+            <div id="lang-switch">
+                <button onclick="setLang('ar')">عربي</button>
+                <button onclick="setLang('en')">English</button>
+                <button onclick="setLang('tr')">Türkçe</button>
+                <button onclick="setLang('fr')">Français</button>
+            </div>
+            <div id="user-info">
+                <span id="balance">رصيدك: 0.00 $</span>
+                <button id="logoutBtn" onclick="logout()">تسجيل خروج</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- نموذج التسجيل / الدخول -->
+            <div id="login-section">
+                <h2>تسجيل الدخول</h2>
+                <input type="email" id="emailInput" placeholder="البريد الإلكتروني" required>
+                <input type="text" id="walletInput" placeholder="عنوان محفظة Binance (USDT)" required>
+                <button onclick="login()">دخول / تسجيل</button>
+                <p id="loginError" style="color:red;display:none;"></p>
+            </div>
+
+            <!-- منطقة اللعبة (تظهر بعد التسجيل) -->
+            <div id="game-section" style="display:none;">
+                <div id="level-select">
+                    <label>اختر مستوى المخاطرة:</label>
+                    <button class="level-btn" data-level="low" onclick="setLevel('low')">🟢 منخفض</button>
+                    <button class="level-btn" data-level="medium" onclick="setLevel('medium')">🟡 متوسط</button>
+                    <button class="level-btn" data-level="high" onclick="setLevel('high')">🔴 مرتفع</button>
+                    <span id="current-level">المستوى: منخفض</span>
+                </div>
+
+                <div id="boxes-container">
+                    <!-- سيتم إنشاء الصناديق بواسطة JavaScript -->
+                </div>
+
+                <div id="bet-controls">
+                    <input type="number" id="betAmount" value="1.00" step="0.50" min="0.50">
+                    <button id="playBtn" onclick="playGame()">🎲 اختر صندوقاً</button>
+                </div>
+
+                <div id="result-display"></div>
+
+                <div id="action-buttons">
+                    <button onclick="deposit()">💰 إيداع</button>
+                    <button onclick="requestWithdraw()">💸 طلب سحب</button>
+                </div>
+            </div>
+
+            <!-- لوحة المتصدرين والمعاملات -->
+            <aside id="leaderboard">
+                <h3>🏆 المتصدرون اليوم</h3>
+                <ul id="leaders"></ul>
+                <h3>📜 آخر المعاملات</h3>
+                <ul id="recent-tx"></ul>
+            </aside>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
