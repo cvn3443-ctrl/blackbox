@@ -1,0 +1,390 @@
+/* Mo.dark – BlackBox Style (نسخة نهائية) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0f;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    padding: 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#app {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2a2a3a;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #00ccff;
+    text-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+}
+
+#lang-switch button {
+    background: #1a1a2e;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 3px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+#lang-switch button:hover {
+    background: #2a2a4e;
+    border-color: #00ccff;
+}
+
+#user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+
+#balance {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+#logoutBtn {
+    background: #b71c1c;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Login Section */
+#login-section {
+    background: #12121f;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #2a2a3a;
+    max-width: 450px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+#login-section h2 {
+    margin-bottom: 20px;
+    color: #00ccff;
+}
+
+#login-section input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a2e;
+    color: #eee;
+    font-size: 16px;
+}
+
+#login-section button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#login-section button:hover {
+    background: #0055aa;
+}
+
+/* Game Section */
+#game-section {
+    display: none;
+    margin-top: 20px;
+}
+
+#level-select {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    background: #12121f;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #2a2a3a;
+}
+
+#level-select label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.level-btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    background: transparent;
+    color: #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.level-btn:hover {
+    transform: scale(1.05);
+}
+
+.level-btn.active-low {
+    border-color: #4caf50;
+    background: #1b5e20;
+    color: white;
+}
+
+.level-btn.active-medium {
+    border-color: #ffeb3b;
+    background: #5d4e00;
+    color: white;
+}
+
+.level-btn.active-high {
+    border-color: #f44336;
+    background: #7a1a1a;
+    color: white;
+}
+
+#current-level {
+    margin-left: auto;
+    font-weight: bold;
+    color: #aaa;
+}
+
+/* Boxes */
+#boxes-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 110px;
+    height: 140px;
+    background: #16162b;
+    border: 2px solid #2a2a4a;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.1);
+    user-select: none;
+}
+
+.box:hover:not(.disabled) {
+    transform: scale(1.08);
+    border-color: #00aaff;
+    box-shadow: 0 0 30px rgba(0, 150, 255, 0.3);
+}
+
+.box.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.box.reveal-win {
+    background: #1b5e20;
+    border-color: #4caf50;
+    box-shadow: 0 0 40px rgba(76, 175, 80, 0.5);
+}
+
+.box.reveal-lose {
+    background: #7a1a1a;
+    border-color: #f44336;
+    box-shadow: 0 0 40px rgba(244, 67, 54, 0.5);
+}
+
+/* Bet Controls */
+#bet-controls {
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+#betAmount {
+    padding: 12px 18px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #1a1a2e;
+    color: #eee;
+    width: 160px;
+    text-align: center;
+}
+
+#playBtn {
+    padding: 12px 35px;
+    font-size: 20px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#playBtn:hover:not(:disabled) {
+    background: #0055aa;
+    transform: scale(1.03);
+}
+
+#playBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#result-display {
+    text-align: center;
+    font-size: 22px;
+    margin: 20px 0;
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #0d0d1a;
+}
+
+.result-win {
+    color: #4caf50;
+}
+
+.result-lose {
+    color: #f44336;
+}
+
+/* Action Buttons */
+#action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+#action-buttons button {
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#action-buttons button:first-child {
+    background: #2e7d32;
+    color: white;
+}
+
+#action-buttons button:first-child:hover {
+    background: #1b5e20;
+}
+
+#action-buttons button:last-child {
+    background: #b71c1c;
+    color: white;
+}
+
+#action-buttons button:last-child:hover {
+    background: #7a1a1a;
+}
+
+/* Aside */
+aside {
+    background: #0d0d1a;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #1a1a2e;
+    margin-top: 30px;
+}
+
+aside h3 {
+    color: #00ccff;
+    margin: 15px 0 10px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    padding: 6px 0;
+    border-bottom: 1px solid #1a1a2e;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 22px;
+    }
+    #user-info {
+        font-size: 14px;
+        flex-wrap: wrap;
+    }
+    .box {
+        width: 75px;
+        height: 100px;
+        font-size: 20px;
+    }
+    #betAmount {
+        width: 130px;
+        font-size: 16px;
+    }
+    #playBtn {
+        padding: 10px 25px;
+        font-size: 17px;
+    }
+    #action-buttons button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    #level-select {
+        font-size: 14px;
+    }
+    .level-btn {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+      }
